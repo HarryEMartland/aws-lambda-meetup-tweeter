@@ -38,6 +38,7 @@ function tweetEvents() {
 }
 
 function tweet(tweet) {
+    console.log(tweet);
     return client.post('statuses/update', tweet)
 }
 
@@ -53,10 +54,10 @@ let createTweet = exports.createTweet = function (event) {
     }
 
     let suffix = "";
-    if(groupSuffix[event.group.id+""]){
+    if (groupSuffix[event.group.id + ""]) {
         suffix = suffix + " " + groupSuffix[event.group.id];
     }
-    if(venueSuffic[event.venue.id+""]){
+    if (venueSuffic[event.venue.id + ""]) {
         suffix = suffix + " " + venueSuffic[event.venue.id];
     }
 
